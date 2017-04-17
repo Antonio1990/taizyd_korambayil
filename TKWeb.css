@@ -8,11 +8,18 @@ div.mainname{margin:auto;}
 
 H1.mainname{display: inline-block; float:none;margin:2px; text-align:center; padding: 0px;font-size:24pt;width:100%; font-family:sans-serif; color:white; text-decoration: none; }
 p.mainname{float:none;margin:auto; text-align:center; padding: 5px;font-size:12px; font-family:sans-serif; color:white; text-decoration: none; }
+p.description{float:none;margin:auto; text-align:left; padding: 5px;font-size:12px; font-family:sans-serif; color:white; text-decoration: none; }
+p.imgtitle{float:none;margin:auto; padding: 5px;font-size:12px; font-family:sans-serif; color:white; text-decoration: none; }
+p.end{float:none;margin:auto; padding: 5px;font-size:12px; font-family:sans-serif; color:white; text-decoration: none;text-align:center; }
 
 H3.mainheading{display: inline-block; float:none;margin:auto;text-align:center; width:100%; padding: 25px;font-size:32px; font-family:sans-serif; color:#13ADEE; text-decoration: none;}
-H4.subheading{float:none;text-align:center; padding: 25px;font-size:26px; font-family:sans-serif; color:#13ADEE; text-decoration: none;}
+H4.subheading{float:none;text-align:center; padding: 0px;font-size:26px; font-family:sans-serif; color:#13ADEE; text-decoration: none;}
+H4.minorheading{float:none;text-align:left; padding: 0px;font-size:18px; font-family:sans-serif; color:#13ADEE; text-decoration: none;}
 
 IMG.portrait{border-width:2px 2px 2px 2px; border-style:solid ;border-color:#13ADEE; border; margin-left:16px; }
+img.covershot{border-width:2px 2px 2px 2px; border-style:solid ;border-color:#13ADEE;}
+img.centered{margin-left:128px; }
+
 
 H1.bloglinkheading{text-align:center;color:white; font-size:36px;font-family:sans-serif; }
 a.bloglinkheading{text-align:center;color:white; font-size:36px;text-decoration:none; }
@@ -22,5 +29,9 @@ img.bloglinkimage{ width:100%;border-style:solid;border-width:2.5px;border-color
 div.bloglinkimage{ width:150pt;margin:auto;}
 
 div.projectscontainer{width:1024px;margin:auto;}
+div.subsection{margin:auto; padding:0px;width:1024px;}
+div.centered{margin-left:128px;} 
+div.teximagecombo{padding:auto;display:inline-block;} 
+div.block{padding:auto} 
 
 /*div.mainpagebody{width:75%;margin:auto; background-color:rgba(0,0,0,0.5);}*/
