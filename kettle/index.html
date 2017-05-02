@@ -31,7 +31,7 @@ P {	font-family: Helvetica, sans-serif;
 <BODY BGCOLOR="#ffffff" BACKGROUND="../your_background_pattern.gif">
 
 	  <div class="mainheading">
-			<H3 class="mainheading">Pixar Challenge</H3>
+			<H3 class="mainheading">Rib Wrangling</H3>
 			<BR>
 			<P class="mainname">
 			This page demonstrates the basics of how a 3D scene is represented
@@ -49,21 +49,54 @@ P {	font-family: Helvetica, sans-serif;
       
 	 <div class="subsection">
 		
-		<H4 class="subheading">Basic Shading</H4>
-			
-			</div>
+		<H4 class="subheading">Final Renders</H4>
+		<A HREF="img/Glass.jpg"><img src="img/Glass.jpg" width="512" alt="" border="0" class="centered"></A>
+		<A HREF="img/Glass.jpg"><img src="img/Glass.jpg" width="512" alt="" border="0" class="centered"></A>
+	</div>
 		<!-- LOOK DEV SECTION -->
 		<div class="subsection">
-		<H4 class="subheading">Surface + Displacements + Basic Lighting</H4>
+		<div class="centered">
+		<H4 class="subheading">Modelling Process</H4>
+		<P class="description"> This section showcases how the modelling was handled using quadric surfaces. I created seperate rib Archives for the cups and the Teapot. </P><BR>
+		<P class="description">The Teapot is broken up into 5 main pieces, the "mainpot","top-lid","spout","handle" and "base". Each of these parts in turn are made up of 2 or more quadric surfaces</P>
+		<table>
+		<tr><td>
+		<P class="description">Teapot Archive:</P>
+		<iframe class="code" src="code/TeapotShape_01.rib"> </iframe>
+		</td>
+		
+		<td>
+		<P class="description">Cup Archive:</P>
+		<iframe class="code" src="code/TeapotShape_01.rib"></iframe>
+		</td>
+		</tr><BR><BR>
+		
+		
+		<tr><td>
+		<H4 class="minorheading">TroubleShooting the Spout</H4>
+		<P class="description">The spout was the trickiest bit of the teapot to model. It was very cumbersome to try and<BR>create the shape using quadric surfaces, so I opted to instead use a bezier curve:</P>
+		<iframe class="code" src="code/TeapotShape_01.rib"> </iframe>
+		</td>
+		</tr>
+		</table>
+		</div>
 		<div class="centered">
 		
 		</div>
 		
 		<!-- Lighting Section -->	
 		<div class="subsection">
-		<H4 class="subheading">Advanced Lighting - Shadows</H4>
-		<P class="mainname">This was the initial Lighting Pass, done on the greyboxed scene</P>
-			
+		<div class="centered">
+		<H4 class="subheading">Lighting</H4>
+		<P class="description">For the lighting setup I used 2 rectanle Lights, one as the key light and the other as a rim light.<BR> I then used a domelight with a HDR Image to get some fill, I set the intesnsity of the HDR to 0.5 so<BR> that it was a little subdued</P>
+		<H4 class="minorheading">HDR Image:</H4>
+		</div>	
+		</div>
+		
+		<div class="subsection">
+		<H4 class="subheading">Shading</H4>
+		<P class="mainname">The scene uses mostly jsut two Archives for the material, one for the ground plane and one for the Teapot and Cups.</P>
+		
 		</div>
 		
 			
