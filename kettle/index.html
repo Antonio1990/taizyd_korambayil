@@ -48,26 +48,54 @@ P {	font-family: Helvetica, sans-serif;
 <BR>
       
 	 <div class="subsection">
-		
+		<!--<div class="centered">-->
 		<H4 class="subheading">Final Renders</H4>
-		<A HREF="img/Glass.jpg"><img src="img/Glass.jpg" width="512" alt="" border="0" class="centered"></A>
-		<A HREF="img/Glass.jpg"><img src="img/Glass.jpg" width="512" alt="" border="0" class="centered"></A>
+		<table>
+		<tr>
+		<td><A HREF="img/Final_01.jpg"><img src="img/Final_01.jpg" width="400" alt="" border="0" class="centered"></A></td>
+		<td><A HREF="img/Final_02.jpg"><img src="img/Final_02.jpg" width="400" alt="" border="0" class="centered"></A></td>
+		</tr>
+		<tr>
+		<td><A HREF="img/Final_03.jpg"><img src="img/Final_03.jpg" width="400" alt="" border="0" class="centered"></A></td>
+		<td><A HREF="img/Final_04.jpg"><img src="img/Final_04.jpg" width="400" alt="" border="0" class="centered"></A></td>
+		</tr>
+		</table>
+		<!--</div>-->
+	</div>
+		<!-- Reference Images -->
+	<div class="subsection">
+		<!--<div class="centered">-->
+		<H4 class="subheading">Reference Images</H4>
+		<P class="mainname">These are some of the reference images I used while modelling the Teapot and Cups.</P>
+		<A HREF="img/Ref_01.jpg"><img src="img/Ref_01.jpg" width="300" alt="" border="0" class="centered"></A>
+		<A HREF="img/Ref_02.jpg"><img src="img/Ref_02.jpg" width="200" alt="" border="0" class="centered"></A>
+		<A HREF="img/Ref_03.jpg"><img src="img/Ref_03.jpg" width="200" alt="" border="0" class="centered"></A>
+		<A HREF="img/Ref_04.jpg"><img src="img/Ref_04.jpg" width="200" alt="" border="0" class="centered"></A>
+		<A HREF="img/Ref_05.jpg"><img src="img/Ref_05.jpg" width="200" alt="" border="0" class="centered"></A>
 	</div>
 		<!-- LOOK DEV SECTION -->
 		<div class="subsection">
 		<div class="centered">
 		<H4 class="subheading">Modelling Process</H4>
+		<P class="description">I struggled initially with this assignment, trying to grasp how this language functioned, but soon it became apparent that this was no python! This was more like HTML for 3D. After figuring that out it just became a process of try something, make shapes align, rinse repeat.</P>
 		<P class="description"> This section showcases how the modelling was handled using quadric surfaces. I created seperate rib Archives for the cups and the Teapot. </P><BR>
 		<P class="description">The Teapot is broken up into 5 main pieces, the "mainpot","top-lid","spout","handle" and "base". Each of these parts in turn are made up of 2 or more quadric surfaces</P>
+		<P class="description">Video Showcasing Modelling Steps:</P>
+		<video width="512" controls><source src="vid/Modelling_Process.webm" type="video/webm"></video>
 		<table>
 		<tr><td>
+		<P class="description">Scene Rib:</P>
+		<iframe class="code" src="code/Teapot_Scene.rib" width=512> </iframe>
+		</td>
+		</tr>
+		<tr><td>
 		<P class="description">Teapot Archive:</P>
-		<iframe class="code" src="code/TeapotShape_01.rib"> </iframe>
+		<iframe class="code" src="code/TeapotShape_01.rib" width=512> </iframe>
 		</td>
 		
 		<td>
 		<P class="description">Cup Archive:</P>
-		<iframe class="code" src="code/TeapotShape_01.rib"></iframe>
+		<iframe class="code" src="code/CupShape_01.rib" width=512></iframe>
 		</td>
 		</tr><BR><BR>
 		
@@ -75,7 +103,7 @@ P {	font-family: Helvetica, sans-serif;
 		<tr><td>
 		<H4 class="minorheading">TroubleShooting the Spout</H4>
 		<P class="description">The spout was the trickiest bit of the teapot to model. It was very cumbersome to try and<BR>create the shape using quadric surfaces, so I opted to instead use a bezier curve:</P>
-		<iframe class="code" src="code/TeapotShape_01.rib"> </iframe>
+		<iframe class="code" src="code/SpoutShape_01.rib" width=512> </iframe>
 		</td>
 		</tr>
 		</table>
@@ -88,29 +116,43 @@ P {	font-family: Helvetica, sans-serif;
 		<div class="subsection">
 		<div class="centered">
 		<H4 class="subheading">Lighting</H4>
-		<P class="description">For the lighting setup I used 2 rectanle Lights, one as the key light and the other as a rim light.<BR> I then used a domelight with a HDR Image to get some fill, I set the intesnsity of the HDR to 0.5 so<BR> that it was a little subdued</P>
+		<P class="description">For the lighting setup I used 2 rectangle Lights, one as the key light and the other as a rim light.<BR> I then used a domelight with a HDR Image to get some fill, I set the intesnsity of the HDR to 0.5 so<BR> that it was a little subdued</P>
+		<P class="description">Lighting Archive:</P>
+		<iframe class="code" src="code/3Pointlight.rib" width=512></iframe>
 		<H4 class="minorheading">HDR Image:</H4>
+		<A HREF="img/Alexs_Apt_8k.jpg"><img src="img/Alexs_Apt_8k.jpg" width="512" alt="" border="0"></A>
+		<P class="description"> I downloaded the image from <A href="http://www.hdrlabs.com/sibl/archive.html">here</A>.</P>
 		</div>	
 		</div>
-		
+		<!-- Shading Section -->
 		<div class="subsection">
 		<H4 class="subheading">Shading</H4>
-		<P class="mainname">The scene uses mostly jsut two Archives for the material, one for the ground plane and one for the Teapot and Cups.</P>
-		
+		<P class="mainname">The scene uses mostly just two Archives for the material, one for the ground plane and one for the Teapot and Cups.</P>
+		<P class="description">For the kettle and cup surface I wanted to try and emulate the surface of my first reference Image. So I tried using a fractal noise pattern<BR>
+		to drive the displacement on the surface of the kettle. This worked quite well, the tricky part was to try and get a subtle value without getting too noisy<BR><BR>
+		I also used a grunge map, to try and add some variation in the specularity of the surface.</P>
+		<table>
+		<tr>
+		<td><P class="description">KettleSurface Archive</P>
+		<iframe src="code/Teapot_BaseShader.rib" class="code" width=512></iframe>
+		</td>
+		<td><P class="description">Wood Surface Archive</P>
+		<iframe src="code/TeapotGround.rib" class="code" width=512></iframe>
+		</td>
+		</tr>
+		</table>
+		<H4 class="subheading">Textures:</H4>
+		<P class="description">These were some of the textures I used in the shading process</P>
+		<A HREF="img/Grunge_01.jpg"><img src="img/Grunge_01.jpg" width="200" alt="" border="0"></A>
+		<A HREF="img/SurfaceWood.jpg"><img src="img/SurfaceWood.jpg" width="200" alt="" border="0"></A>
+		<P class="description">Textures were sourced from <A href="https://www.textures.com/">here</A></P>
 		</div>
-		
 			
-	</div>
-	
-
-	
 	<div class="subsection">
 		<H4 class="subheading">Final Thoughts</H4>
 		<div class="centered">
-		<p class="description">I found this assignment very difficult, primarily because I am used to working with Real-Time Engines and this workflow of Setting values and waiting for the render to show you the end result felt very cumbersome.<BR>
-		I think my primary problem was my unfamiliarity with Maya and Renderman, I knew what results I wanted to achieve but my lack of knowledge of the software made it very frustrating trying to achieve the results I wanted.<BR><BR>
-		I would have preferred to work on a smaller scene like a still life with only a few objects, so that I could focus on a few shaders and work to refine and perfect them, this would have given me the opportunity to learn more about renderman, the sheer number of objects in this scene was overwhelming for me with no prior experience with Maya or Renderman and it felt like I was just rushing to quickly apply shaders to all the objects.My scene is still quite unfinished in my eyes and will probably work on it some more at my own pace.<BR><BR>
-		I think I will most likely try and work on a smaller still life in my free time to get more familiar with Renderman and all its nodes.</p>
+		<p class="description">This was an interesting assignment, looking under the hood at all the raw data being used in the Prman Renderer. The process of modelling was extremely cumbersome.<BR>
+		Perhaps it would be cool to have an assigment that integrates some python, to automate some aspect of the process. I enjoyed working on this assignment.</p>
 		<p class="end">Thank you for Reading! :)</p>
 		</div>
 	</div>
