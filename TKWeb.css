@@ -17,6 +17,7 @@ H4.subheading{float:none;text-align:center; padding: 0px;font-size:26px; font-fa
 H4.minorheading{float:none;text-align:left; padding: 0px;font-size:18px; font-family:sans-serif; color:#13ADEE; text-decoration: none;}
 
 IMG.portrait{border-width:2px 2px 2px 2px; border-style:solid ;border-color:#13ADEE; border; margin-left:16px; }
+IMG.portrait_centered{border-width:2px 2px 2px 2px; border-style:solid ;border-color:#13ADEE; border; margin-left:384px; }
 img.covershot{border-width:2px 2px 2px 2px; border-style:solid ;border-color:#13ADEE;}
 img.centered{margin-left:128px; }
 

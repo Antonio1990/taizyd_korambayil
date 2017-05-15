@@ -3,7 +3,7 @@
 
 <HTML>
 <HEAD>
-<TITLE>RenderMan: ST Coloration</TITLE>
+<TITLE>RenderMan - ST-Coloration</TITLE>
 <link rel="stylesheet" type="text/css" href="../TKWeb.css">
 <STYLE type="text/css"><!--
 H3 {	font-family: Helvetica, sans-serif;
@@ -12,7 +12,6 @@ H3 {	font-family: Helvetica, sans-serif;
 		font-weight: bold;
 		margin-left: 0pt;
 		margin-bottom: 0pt;
-		color: #aa2222;
 	}
 
 P {	font-family: Helvetica, sans-serif;
@@ -31,45 +30,54 @@ P {	font-family: Helvetica, sans-serif;
 </HEAD>
 <BODY BGCOLOR="#ffffff" BACKGROUND="../your_background_pattern.gif">
 
-
-<TABLE BORDER="0" CELLSPACING="0">
-	<TR>
-		<TD WIDTH="20" NOWRAP><!-- left hand margin --></TD>
-		<TD VALIGN="MIDDLE" ALIGN="left" NOWRAP width="500">
+	  <div class="mainheading">
+			<H3 class="mainheading">ST-Coloration:Maya Patterns</H3>
 			<BR>
-			<P>
+			<P class="mainname">
 			These images show the results of using the Open Shading Language (OSL) 
 			to write a variety of shaders for use with RenderMan for Maya. 
 			The notes and OSL code accompanying each image explain how each pattern was achieved.
+
 			</P>
-		</TD>
-	</TR>
-</TABLE>
+	  </div>
 <BR>
 <BR>
-<TABLE BORDER="0" CELLSPACING="0">
-	<TR>
-		<TD WIDTH="20" NOWRAP><!-- left margin --></TD>
-		<TD VALIGN="TOP" ALIGN="left" NOWRAP>
-			<img src="placeholder.jpg" ALT="" BORDER=0>
-			<BR>
-			<BR>
-			<P class="gray66">
-			<!-- Notes go here -->
-			</P>
-		</TD>
-		<TD WIDTH="20" NOWRAP><!-- center margin --></TD>
-		<TD VALIGN="TOP" ALIGN="left" NOWRAP>
-			<PRE class="gray66">
-			<!-- Snippets of RIB goes here -->
-			</PRE>
-		</TD>
-	</TR>
-</TABLE>
+      
+	 <div class="subsection">
+		<H4 class="subheading">Rectangle</H4>
+		<A HREF="img/Rectangle_Shape.jpg"><img src="img/Rectangle_Shape.jpg" width="256" alt="" border="0" class="portrait_centered"></A>
+		<p class="mainname">Shader Inputs:</p>
+		<A HREF="img/Rectangle.PNG"><img src="img/Rectangle.PNG" width="256" alt="" border="0" class="portrait_centered"></A>
+		<p class="description">The rectangle shape was set with adjustable parameters for it's positioning in the UV coordinate system, as well as parameters to control it's width and height.I've also exposed
+		parameters to control the colors.</p>
+		<p class="description">You can see the code for the shader below:</p>
+		<iframe src="code/rectangle.osl" class="code" width=512></iframe>
+	</div>
+	
+	<div class="subsection">
+		<H4 class="subheading">Circle</H4>
+		<A HREF="img/Circle_Shape.jpg"><img src="img/Circle_Shape.jpg" width="256" alt="" border="0" class="portrait_centered"></A>
+		<p class="mainname">Shader Inputs:</p>
+		<A HREF="img/Circle.PNG"><img src="img/Circle.PNG" width="256" alt="" border="0" class="portrait_centered"></A>
+		<p class="description">The circle shape was created by centering the UV coordiante system, and comparing the length of the UV Vector with the radius parameter. The shader has parameters to control the position and radius of the sphere as well as the colors. Controlling the position was only a matter of subtracting the UV coordinates from the x and y inputs.</p>
+		<p class="description">You can see the code for the shader below:</p>
+		<iframe src="code/circle.osl" class="code" width=512></iframe>
+	</div>
+	
+	
+	<div class="subsection">
+		<H4 class="subheading">Crescent</H4>
+		<A HREF="img/Crescent_Shape.jpg"><img src="img/Crescent_Shape.jpg" width="256" alt="" border="0" class="portrait_centered"></A>
+		<p class="mainname">Shader Inputs:</p>
+		<A HREF="img/Crescent.PNG"><img src="img/Crescent.PNG" width="256" alt="" border="0" class="portrait_centered"></A>
+		<p class="description">The crescent shape was created by utilizing the same code as the circle, but in this case the circle function is called twice to create two circles, with one slightly offset from the other, then it's simplya matter of subtracting one circle from the other to get the crescent shape.The Shader also has parameters to control position radius and colors. It would also be trivial to create a slider to control the crescent shape to go from full moon to all other shapes.</p>
+		<p class="description">You can see the code for the shader below:</p>
+		<iframe src="code/Crescent.osl" class="code" width=512></iframe>
+	</div>
+				
+	  
 <BR>
 <BR>
 
 </BODY>
 </HTML>
-
-
