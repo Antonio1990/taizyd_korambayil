@@ -12,7 +12,6 @@ H3 {	font-family: Helvetica, sans-serif;
 		font-weight: bold;
 		margin-left: 0pt;
 		margin-bottom: 0pt;
-		color: #aa2222;
 	}
 
 P {	font-family: Helvetica, sans-serif;
@@ -30,49 +29,64 @@ P {	font-family: Helvetica, sans-serif;
 </STYLE>
 </HEAD>
 <BODY BGCOLOR="#ffffff" BACKGROUND="../your_background_pattern.gif">
-<div class="mainheading">
-	 <H3 class="mainheading">RenderMan: Pattern Animation</H3><BR>
-</div>
 
-
-<TABLE BORDER="0" CELLSPACING="0">
-	<TR>
-		<TD WIDTH="20" NOWRAP><!-- left hand margin --></TD>
-		<TD VALIGN="MIDDLE" ALIGN="left" NOWRAP width="500">
+	  <div class="mainheading">
+			<H3 class="mainheading">RenderMan: Pattern Animation</H3>
 			<BR>
-			<p class="mainname">
+			<P class="mainname">
 			The graphics and notes on this page explain how custom HyperShade nodes written
 			in the Open Shading Language can be part of shading networks that use
 			Pixar's physically plausible materials.
-			</p>
-		</TD>
-	</TR>
-</TABLE>
-<BR>
-<BR>
-<TABLE BORDER="0" CELLSPACING="0">
-	<TR>
-		<TD WIDTH="20" NOWRAP><!-- left margin --></TD>
-		<TD VALIGN="TOP" ALIGN="left" NOWRAP>
-			<img src="placeholder.jpg" ALT="" BORDER=0>
-			<BR>
-			<BR>
-			<P class="gray66">
-			<!-- Notes go here -->
+
 			</P>
-		</TD>
-		<TD WIDTH="20" NOWRAP><!-- center margin --></TD>
-		<TD VALIGN="TOP" ALIGN="left" NOWRAP>
-			<PRE class="gray66">
-			<!-- Snippets of RIB goes here -->
-			</PRE>
-		</TD>
-	</TR>
-</TABLE>
+	  </div>
+<BR>
+<BR>
+      
+	 <div class="subsection">
+		<H4 class="subheading">Objective:</H4>
+		<p class="description">My goal with this project was to create shader animation for a particle system that was driven Per Particle Attributes of the emitter. The idea was to control the color and incandescence of the particles based on their speed and Age. </p>
+		<H4 class="minorheading">Blobs</H4>
+		<video width="940" controls autoplay>
+  		<source src="vid/Fluid_Blob.webm" type="video/webm">
+  		</video>
+		<H4 class="minorheading">Streaks</H4>
+		<video width="940" controls autoplay>
+  		<source src="vid/FluidTest_01.webm" type="video/webm">
+  		</video>
+		<H4 class="minorheading">ColorVariation</H4>
+		<video width="512" controls autoplay>
+  		<source src="vid/ColorVar_01.webm" type="video/webm">
+  		</video>
+		
+		<video width="512" controls autoplay>
+  		<source src="vid/ColorVar_02.webm" type="video/webm">
+  		</video>
+	</div>
+	
+	<div class="subsection">
+		<H4 class="subheading">Breakdown</H4>
+		<H4 class="minorheading">Particle Attributes</H4>
+		<p class="description">To access the per particle attributes in hypershade we first, need to add them to the particleshape node,then we need to assign them a ramp inside the particle shape attributes, once that is done, we can access these ramp values inside hypershade with the PxrPrimvar node and use it to drive per particle colors.</p>
+		<A HREF="img/ppattributes_01.JPG"><img src="img/ppattributes_01.JPG" width="512" alt="" border="0" class="portrait"></A>
+		<A HREF="img/ppattributes_02.JPG"><img src="img/ppattributes_02.JPG" width="512" alt="" border="0" class="portrait"></A>
+		<H4 class="minorheading">Hypershade</H4>
+		<p class="description">The Hypershade is quite simple we have two PxrPrimvar nodes that feed the Normalized Per Particle Age and the Per Particle Velocity to the custom OSL Node. You can find mor information on the PrimVars <a ahref="https://rmanwiki.pixar.com/display/REN/Primitive+Variables">here</a> </p>
+		<A HREF="img/Hypershader.JPG"><img src="img/Hypershader.JPG" width="512" alt="" border="0" class="portrait"></A>
+		<H4 class="minorheading">Custom Osl node</H4>
+		<p class="description">The Osl node takes the per particle primvars as inputs and uses them to colorise the particles, I added the option for the artist to choose 3 Colors that will make up the color ramp of the shader.It also has an option to switch the coloration based on the particles Age or the Particles Speed. The Incandescence of the particels are age based.</p>
+		<iframe src="code/streak_02.osl" class="code" width=512></iframe>
+		<BR><BR>
+		<A HREF="img/Node_Attributes.JPG"><img src="img/Node_Attributes.JPG" width="512" alt="" border="0" class="portrait"></A>
+	</div>
+	
+	<div class="subsection">
+		<H4 class="subheading">Final Thoughts</H4>
+		<p class="description">I think the hardest part of this project was jsut finding information on what I was trying to do. Also my unfamiliarity with maya's particle systems made things a little challenging as well, it came down to trying to figure out the variable names that i would need to access the particle attributes in hypershade. I ended spending soo much time researching these variables I was unable to spend as much time as I would have liked on the actual OSL, but now that I ahve the fundamentals down, moving forward it should be much easier to wrangle with maya's particle systems.</p>
+				
+	  
 <BR>
 <BR>
 
 </BODY>
 </HTML>
-
-
